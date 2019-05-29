@@ -13,15 +13,69 @@
 
     <script>
 
-        /* Lexical scoping */
+        "use strict";
+        // Lexical scoping
 
         var i = 10;
 
         function varscope() {
-            console.log('Value of i accessed using lexical scoping : ' + i);
+            console.log('Value of i : ' + i);
         }
 
         varscope();
+
+
+        // Block scope - var doesn't support block scope but let does.
+
+        function blockscope1() {
+
+            var j = 20;
+
+            if (true) {
+                var j = 50;
+                console.log('value of j : ' + j);
+            }
+
+            console.log(j);
+
+        }
+
+        blockscope1();
+
+        // Using let
+
+        function blockscope2() {
+
+            let k = 30;
+
+            if (true) {
+                let k = 60;
+                console.log('value of k : ' + k);
+            }
+
+            console.log(k);
+        }
+
+        blockscope2();
+
+
+        //Nested functions - having access to variables in outer scope
+
+        var a = 77;
+
+        function fun1() {
+
+            var b = 88;
+
+            function fun2() {
+                var c = 99;
+                console.log('a : ' + a + ', b : ' + b + ', c : ' + c);
+            }
+            
+            fun2();
+        }
+
+    fun1();
 
     </script>
 </body>
