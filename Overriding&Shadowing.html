@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Overriding and Shadowing</h4>
+
+    <script>
+        
+        // Overriding
+
+        var global = "global";
+
+        function overriding(){
+            global = "overriding global";
+            console.log(global);
+        }
+
+        overriding();
+
+        console.log(global);
+
+        //Shadowing
+
+        var glb = "glb";
+
+        function shadowing(){
+            var glb = "shadowing the glb";
+            console.log(glb);
+        }
+
+        shadowing();
+
+        console.log(glb);
+
+    </script>
+</body>
+</html>
