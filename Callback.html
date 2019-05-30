@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Function Callback</h3>
+
+    <script>
+
+        //Simple Callback
+
+        var myfunc1 = function(){
+            console.log("Excecuting from myfunc1");
+        }
+
+
+        var myfunc2 = function(callback){
+            console.log("Excecuting from myfunc2");
+            callback();
+        }   
+
+        myfunc2(myfunc1); 
+
+              
+        
+
+    </script>
+</body>
+</html>
