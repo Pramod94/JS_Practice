@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Javascript Objects</h3>
+
+    <div>
+        <p id="para1"></p>
+        <p id="para2"></p>
+    </div>
+
+    <script>
+    
+        var obj1 = {
+            color : 'green',
+            wheels : 4,
+            engine : '400cc',
+            performance : function(){
+                return 'Good Performance';
+            }
+        };
+
+        obj1.gears = 5;
+
+        delete(obj1.color);
+
+        console.log(obj1);
+
+        document.getElementById('para1').innerHTML = obj1.engine;
+
+        document.getElementById('para2').innerHTML = obj1.performance();
+
+
+        //New objects created using new keyword.
+        //Constructor functions
+
+        var Bike = function(){
+            
+            var breaks = 'disc';
+
+            this.color = 'green';
+            this.engine = '160cc';
+            
+            var performance = function(){
+                return breaks + ' Great';
+            }
+
+            this.fbreak = breaks;
+
+            var temp = {};
+
+            temp.bperformance = performance();
+
+            return temp;
+        };
+
+        //console.log(Bike.performance());
+
+        var Bike1 = new Bike();
+
+        console.log(Bike1);
+
+
+
+    </script>
+</body>
+</html>
