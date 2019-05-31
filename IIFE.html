@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Immediately Invoked Function Expression</h3>
+
+    <div id="userName"></div>
+
+    <script>
+
+        //Example 1
+
+        (function () {
+            console.log("hey");
+        })();
+
+        //Example 2
+
+        var result = (function () {
+            var name = "PMD";
+            return name;
+        })();
+
+        console.log(result);
+
+
+        //Example 3
+
+        var name = "PMD";
+
+        (function (input) {
+
+            //some code if required
+
+            function display() {
+                document.querySelector("#userName").innerHTML = "Name is " + input;
+            }
+
+            display();
+
+        })(name);
+
+
+        //Example 4
+
+        var increment = (function () {
+           
+            var i = 2;
+
+            return {
+                inc : function () {
+                    return ++i;
+                }
+            }
+
+        })();
+
+        console.log(increment.inc());
+
+
+    </script>
+</body>
+
+</html>
