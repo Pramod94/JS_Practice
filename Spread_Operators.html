@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h3>Spread Operators</h3>
+
+        <script>
+            
+            //Type 1
+
+            function spread(...n){
+                console.log(n);
+            }
+
+            spread(1,2,3,4,5);
+
+            //Type 2
+
+            var ary = ['a','b','c','d'];
+
+            function spread1(p,q,r,...n){
+                console.log(n);
+            }
+
+            spread1(1,2,3,ary);
+
+            //Type 3
+
+            var myary1 = ['hey','hello',...ary,'Bye'];
+
+            console.log(myary1);
+
+            var myary2 = ['p','q','r'];
+
+            var myary3 = ['a','b','c'];
+
+            //myary3.push(...myary2);
+
+            console.log(myary3);
+
+            myary1.push(...myary2);
+
+            console.log(myary1);
+
+            
+            //Type 4 - Merges two arrays
+
+            var myary4 = [...myary2,...myary3];
+
+            console.log(myary4);
+
+            var myary5 = myary2.concat(...myary3);
+
+            console.log(myary5);
+
+
+        
+        </script>
+</body>
+</html>
