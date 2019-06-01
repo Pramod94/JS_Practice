@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h3>Default Parameters</h3>
+
+        <div>
+            Using ES5 without parameters :  <span id="res1"></span> <br><br>
+            Using ES5 with parameters : <span id="res2"></span>
+
+            <br><br>
+
+            
+            Using ES6 without parameters :  <span id="res3"></span> <br><br>
+            Using ES6 with parameters : <span id="res4"></span>
+        </div>
+
+        <script>
+            
+            // In ES5
+
+            function default_parameters(a,b){
+
+                a = a || 1;
+                b = b || 1;
+
+                return a + b;
+            }
+
+            document.getElementById('res1').innerHTML = default_parameters(); // 2
+
+            document.getElementById('res2').innerHTML = default_parameters(10,20); //30
+
+
+
+            // In ES6
+
+            function default_parameters1(a=1,b=1){
+                return a + b;
+            }
+
+            document.getElementById('res3').innerHTML = default_parameters1(); //2
+            
+            document.getElementById('res4').innerHTML = default_parameters1(10,20);
+
+
+            
+            // In arrays
+
+            var ary = [2,4,6,8];
+
+            function default_parameters2(a=[] , b=[2]){
+                return [...a,...b];
+            }
+
+            console.log(default_parameters2(ary));
+
+
+            // In Objects
+
+            var obj = {
+                bike : 'Suzuki',
+                engine : '160cc'
+            };
+
+            function default_parameters3( {bike='Hero',engine='100cc'}  = {}){
+
+                return bike + ' with ' + engine;
+            }
+
+            console.log(default_parameters3());
+
+            console.log(default_parameters3(obj));
+
+
+        
+        </script>
+</body>
+</html>
