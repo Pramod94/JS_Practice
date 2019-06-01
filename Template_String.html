@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h3>Template String</h3>
+
+        <div>
+            Result : <span id="res"></span>
+            <p>Content inside the <strong style="color: blue">${ }</strong> is automatically converted to Strings</p>
+        </div>
+
+        <script>
+
+            var a=10, b=15; 
+
+            var temp = `On adding ${a} and ${b} is ${a+b}`;
+
+            document.getElementById('res').innerHTML = temp;            
+        
+        </script>
+</body>
+</html>
