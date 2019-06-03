@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Using this Object</h3> 
+
+    <h5>Usage of call and arrow functions</h5>
+
+    <script>
+
+        'use strict'
+
+        //this referes to current object
+
+        var car = {
+            color: 'green',
+
+            car_color: function () {
+                console.log(`car color is ${this.color}`);
+            }
+        };
+
+        car.car_color();
+
+
+//******************************************************************************
+
+
+        // usage of strict will throw an error while accessing this.gears
+
+        this.gears = 4;
+
+        function total_gears(){
+            console.log('Using Normal function : '+ 'Gears : ' + this.gears);
+        }
+
+        //total_gears();  // throws an error
+
+        //using call() as a solution or Make use of arrow function
+
+        total_gears.call(this);
+
+
+//******************************************************************************
+
+        //Arrow function usage - can access outer this object
+
+        this.gears1 = 5;
+
+        let total_gears1 = () => {
+            console.log('Using Arrow function : ' +'Gears : ' +this.gears1);
+        }
+
+        total_gears1();
+
+
+//******************************************************************************
+
+        // syntax :  function_name.call(object,'parameters');
+
+        var bike = {
+            company : 'Suzuki'
+        };
+
+        let myfunc = function(top_speed){
+            console.log(`The ${this.company} bike runs at a top speed of ${top_speed}`);
+        }
+
+        //myfunc('120kmph'); // throws an error
+
+        myfunc.call(bike,'120kmph');
+
+    </script>
+</body>
+
+</html>
