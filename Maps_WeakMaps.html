@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h3>Maps and WeakMaps</h3>
+
+        <script>
+
+            //Using Objects
+
+            var obj1 = {
+                num : 3
+            };
+
+            var obj2 = {
+                num : 6
+            };
+
+            var obj3 = { };
+
+            obj3[obj1] = 'value 3';
+            obj3[obj2] = 'value 6';
+
+            console.log(obj3); // value 6
+
+
+            //*****************************************************************
+
+            //Maps
+
+            var map1 = new Map();
+
+            map1.set(obj1,'value 3').set(obj2,'value 6');
+
+            console.log(map1);
+
+            //map1.delete(obj2);
+
+            //console.log(map1);
+
+            console.log("-----------Using for of---------");
+
+            for(let [key,value] of map1){
+                console.log(key);
+                console.log(value);
+            }
+
+            //Maps to array
+            console.log("--------Maps to Array--------");
+
+            let ary = [...map1];
+
+            console.log(ary);
+
+
+            //*****************************************************************
+
+            //Weak Maps
+
+            console.log("------Weak Maps------")
+
+            var mymap = new WeakMap();
+
+            (function(){
+                let a = { letter : 'a' };
+
+                mymap.set(a,'Alphabet a');
+
+                console.log(a); // accessible inside    
+            })();
+
+            console.log(a); //can't access
+            
+
+        </script>
+</body>
+</html>
