@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Set Timeout and Set Interval functions</h3>
+
+    <p id="pid"></p>
+
+    <script>
+        
+        setTimeout(() => {
+            console.log("Using setTimeout() function");
+            //clearTimeout(tid); //Can be used here also
+        },1000);
+
+      let tid = setTimeout(() => {
+          console.log("Stopping execution");
+      }, 3000);
+
+      clearTimeout(tid);
+
+
+      //***********************************************************************
+
+      let ttid = setInterval(() => {
+          console.log("Using setInterval() function for every 2 seconds");
+      }, 2000);
+
+      setTimeout(() => {
+          console.log("Stopping setInterval()");
+          clearInterval(ttid);
+      }, 8000);
+    
+
+      //***********************************************************************
+
+      let add = function(a,b){
+          document.getElementById("pid").innerHTML = a + b;
+      };
+
+      setTimeout(add(12,12),5000);
+
+    </script>
+</body>
+</html>
