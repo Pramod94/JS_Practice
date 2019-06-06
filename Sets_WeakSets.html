@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Sets and WeakSets</h3>
+
+    <script>
+        
+        let myset = new Set();
+
+        myset.add(1).add(2); //adds to set
+
+        console.log(myset);
+
+        console.log(myset.size); //set size
+
+        myset.delete(1); // deletes entry 1
+
+        console.log(myset);
+
+        myset.clear(); //empties set
+
+        console.log(myset);
+
+        //Set takes iterable values as arguments like Arrays not Objects
+
+        let ary = ['Hey','Hi','Hello',1,2,3];
+
+        let myset1 = new Set(ary);
+
+        console.log(myset1);
+
+
+        //Loops thow the Set - for of
+
+        for (const iterator of myset1) {
+            console.log(iterator);
+        }
+
+        //Stores uique values
+
+        let ary1 = [1,2,2,3,3,3,4,4,4,4];
+
+        console.log(ary1);
+
+        let myset2 = new Set(ary1);
+
+        console.log(myset2);
+
+        //Set to Array
+
+        console.log([...myset2]); // OR 
+
+        console.log(Array.from(myset2));
+
+
+        //*************************  Weak Sets  *************************************
+
+        //Takes only Objects
+
+        console.log("****** WeakSet() **********")
+
+        let ws = new WeakSet();
+
+        ws.add({x:1});
+
+        console.log(ws);
+
+        let obj = {
+            a : 1,
+            b : 2,
+            c : 3
+        };
+
+        ws.add(obj);
+
+        console.log(ws);
+
+        ws.add([{p:1},{q:2}]);
+
+        console.log(ws);
+
+        //WeakSet is not iterable
+        
+        for(let val of ws){
+            console.log(val);
+        }
+    
+    </script>
+</body>
+</html>
