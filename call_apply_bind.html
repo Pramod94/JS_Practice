@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>call, apply and bind functions on Object</h3>
+
+    <script>
+
+        let obj = {
+            val : 'Object'
+        };    
+
+
+        let myfunc = function(a){
+            return `${a} to ` + this.val;
+        };
+
+
+
+        //using call()
+
+        let res = myfunc.call(obj,3);
+
+        console.log(res);
+
+
+
+        //using apply() - when function argument is an array
+
+        let ary = [1,2,3];
+
+        let myfunc1 = (a,b,c) => {
+            return `Sum of array elements : ${a+b+c}`;
+        }
+
+        res = myfunc1.apply(obj,ary);
+
+        console.log(res);
+
+
+
+        //Using bind()
+
+        let bound = myfunc1.bind(obj);
+
+        console.log(bound(4,5,6));
+
+    </script>
+</body>
+</html>
