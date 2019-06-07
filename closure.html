@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Closure</h3>
+
+    <script>
+
+        var add = function (passed) {
+
+            var add1 = function (inner) {
+                return passed + inner;
+            }
+
+            return add1;
+        }
+
+        console.dir(add(3, 2)); // can check the closure value, which is 3
+
+        var add2 = new add(2);
+
+        console.log(add2(5));
+
+
+        //*********************************************************
+
+        var counter = (function () {
+
+            var count = 0;
+
+            return function(){
+                return count++;
+            }
+        })();
+
+        console.log(counter()); // Calls inner function
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+
+    </script>
+</body>
+
+</html>
