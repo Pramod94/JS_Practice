@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Prototype Object</h3>
+
+    <p>Object Specific properties inside constructor function and shared properties in prototype Object.</p>
+
+    <script>
+        
+        function Human(name,age){
+            this.name = name;
+            this.age = age;
+            this.friends = ['Rahul','Pandya'];
+        }
+
+        Human.prototype.shoe = ['Nike','Puma'];
+
+        var Human1 = new Human('Kohli',30);
+
+        console.log(Human);
+
+        console.log(Human1);
+
+        var Human2 = new Human('MSD',35);
+
+        console.log(Human2);
+
+        Human1.wife = 'Anuska';
+
+        Human2.wife = 'Sakshi';
+
+        console.log(Human1);
+
+        console.log(Human2);
+
+
+        Human.prototype.shoe.push('Addidas');
+
+        console.log(Human1);
+
+        console.log(Human2);
+
+        console.log(Human1.shoe); //Accessed from prototype since Human1 doesn't have 'shoe' property
+
+        
+
+    </script>
+</body>
+</html>
